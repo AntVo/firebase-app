@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { firebaseApp } from './firebase';
+
 
 export default class SignUp extends Component {
 	constructor(props){
@@ -11,6 +13,8 @@ export default class SignUp extends Component {
 	signUp(event){
 		event.preventDefault();
 		console.log(this.refs.email.value);
+		firebaseApp.auth().createUserWithEmailAndPassword(this.refs.email.value, this.refs.password.value)
+			.catch(error => { console.log(error) });
 	}
 
 
@@ -19,7 +23,7 @@ export default class SignUp extends Component {
     return (
       <div>
         <h2>Sign Up</h2>
-        <form onSubmit={this.logIn.bind(this)}>
+        <form onSubmit={this.signUp.bind(this)}>
         	<input type="text" placeholder="email" ref="email"></input>
         	<input type="text" placeholder="password" ref="password"></input>
         	<button >submit </button>

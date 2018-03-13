@@ -6,7 +6,7 @@ import SignIn from './sign-in';
 import SignUp from './sign-up';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { firebase } from './firebase/firebase.js';
+import { firebase } from 'firebase';
 
 import registerServiceWorker from './registerServiceWorker';
 import 'bulma/css/bulma.css'
