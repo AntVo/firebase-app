@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { firebaseApp } from './firebase';
 
-
 export default class SignUp extends Component {
 	constructor(props){
 	    	super(props)
@@ -26,7 +25,7 @@ export default class SignUp extends Component {
         <form onSubmit={this.signUp.bind(this)}>
         	<input type="text" placeholder="email" ref="email"></input>
         	<input type="text" placeholder="password" ref="password"></input>
-        	<button >submit </button>
+        	<button>submit</button>
         </form>
 
       </div>
