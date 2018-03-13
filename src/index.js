@@ -2,18 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import SignIn from './sign-in';
+import SignUp from './sign-up';
 
-import { Router, Route, browserHistory } from 'react-router';
-import { firebaseApp } from './firebase';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { firebase } from './firebase/firebase.js';
 
 import registerServiceWorker from './registerServiceWorker';
 import 'bulma/css/bulma.css'
 
-ReactDOM.render(<
-	<Router path="/" history={browserHistory}>
-		<Route path="/app" component={App} />
-		<Route path="/signin" component={Signin} />
-		<Route path="signup" component={SignUp} />
+ReactDOM.render(
+	<Router path="/">
+		<Switch>
+			<Route path="/app" component={App} />
+			<Route path="/signin" component={SignIn} />
+			<Route path="/signup" component={SignUp} />
+		</Switch>
 	</Router>
 	, document.getElementById('root'));
 
