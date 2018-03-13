@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
-
+import 'bulma/css/bulma.css'
 export default class Login extends Component {
 
 	render() {
 
 
-		const responseGoogle = (response) => {
-			console.log(response);
-		}
 		const responseFacebook = (response) => {
 			console.log(response);
 		}
