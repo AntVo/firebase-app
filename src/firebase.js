@@ -1,4 +1,6 @@
 import * as firebase from 'firebase'
+require("firebase/firestore");
+
 
 const config = {
 	  apiKey: "AIzaSyCgJ7BzBB7VopfwwMg6xQpxzpv9H5F18ks",
@@ -9,8 +11,6 @@ const config = {
     messagingSenderId: "658859930117"
 }
 export const firebaseApp = firebase.initializeApp(config);
-
-
 
 // Initialize Cloud Firestore through Firebase
 // var db = firebase.firestore();

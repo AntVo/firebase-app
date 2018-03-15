@@ -16,16 +16,14 @@ export default class SignUp extends Component {
 		firebaseApp.auth().createUserWithEmailAndPassword(email, password)
 			.catch(error => { console.log(error) });
 
-    const user = firebase.auth().currentUser;
-    firebase.firestore().collection("users").add({
-       name: user.displayName;
-       email: user.email;
-       uid: user.uid;
+    const user = firebaseApp.auth().currentUser;
+    firebaseApp.firestore().collection("users").add({
+       name: user.displayName,
+       email: user.email,
+       uid: user.uid,
 
     })
 	}
-
-
 
   render() {
     return (
